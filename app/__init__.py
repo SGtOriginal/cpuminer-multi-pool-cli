@@ -10,6 +10,9 @@
 # -p ahashpool -c BTC -a skein -q -f "docker run cpuminer-multi:alpine cpuminer"
 # Balance: https://ahashpool.com/wallet.php?wallet=bc1qnt4xyjfwgdaqr6ps5c4reywt3gxulnhwwedglu
 
+# -p ravenminer -c BTC -a x16rv2 -q -f "docker run cpuminer-multi:alpine cpuminer"
+# Balance: https://www.ravenminer.com/?address=RQyfUi4gayh9QVb5Zp7NefqYiz2yoqtAtL
+
 # ** cpuminer-multi 1.3.7 by tpruvot@github **
 # BTC donation address: 1FhDPLPpw18X4srecguG3MxJYe4a1JsZnd (tpruvot)
 #

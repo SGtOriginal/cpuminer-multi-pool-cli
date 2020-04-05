@@ -93,6 +93,73 @@
     ]
   },
   {
+    "name": "RavenMiner",
+    "currencies": [
+      {
+        "currency": {
+          "name": "RavenCoin",
+          "symbol": "RVN"
+        },
+        "algorithms": [
+          {
+            "name": "x16rv2",
+            "connections": [
+              {
+                "difficulty": 1,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3700
+              },
+              {
+                "difficulty": 2,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3701
+              },
+              {
+                "difficulty": 4,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3702
+              },
+              {
+                "difficulty": 8,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3703
+              },
+              {
+                "difficulty": 16,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3704
+              },
+              {
+                "difficulty": 32,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3705
+              },
+              {
+                "difficulty": 64,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3706
+              },
+              {
+                "difficulty": 128,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3707
+              },
+              {
+                "difficulty": 256,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3708
+              },
+              {
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3737
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "AHashPool",
     "currencies": [
       {
