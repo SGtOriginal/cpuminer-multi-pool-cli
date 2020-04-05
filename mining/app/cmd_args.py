@@ -1,6 +1,6 @@
 import argparse
 
-from cpuminer_multi.cmd_params import param_quiet, param_threads, param_algo, param_url, param_pass, param_user, \
+from mining.cpuminer_multi.cmd_params import param_quiet, param_threads, param_algo, param_url, param_pass, param_user, \
     param_max_temp
 from mining.pool.config.general.pool_connection_info import PoolConnectionInfo
 from mining.pool.config.selection.pool_selection_info import PoolSelectionInfo

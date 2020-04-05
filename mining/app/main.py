@@ -1,17 +1,16 @@
-from app.cmd_args import parse_command_line_arguments, get_pool_selection_info, get_executive_file, \
-    get_cpuminer_multi_args, get_pool_args, get_log_file, get_pool_config_file, get_pool_user_config_file
 from cmd.cmd import Command
 from cmd.cmd_executor import CommandExecutor, ConsoleCommandOutputConsumer, FileCommandOutputConsumer
+from mining.app.cmd_args import parse_command_line_arguments
 from mining.pool.config.general.pool_config_resolver import JsonFilePoolConfigurationResolver
 from mining.pool.config.selection.pool_selector import PoolSelector
 from mining.pool.config.user.pool_user_config_resolver import CsvFilePoolUserConfigurationResolver
 
 
 def _create_command(args):
-    pool_config_file = get_pool_config_file(args)
+    pool_config_file = cmd_args.get_pool_config_file(args)
     if pool_config_file is None:
         pool_config_file = 'pool_config.json'
-    pool_user_config_file = get_pool_user_config_file(args)
+    pool_user_config_file = cmd_args.get_pool_user_config_file(args)
     if pool_user_config_file is None:
         pool_user_config_file = 'pool_user_config.csv'
 
@@ -19,7 +18,7 @@ def _create_command(args):
     pool_user_config_resolver = CsvFilePoolUserConfigurationResolver(pool_user_config_file)
     pool_selector = PoolSelector(pool_config_resolver, pool_user_config_resolver)
 
-    pool_selection_info = get_pool_selection_info(args)
+    pool_selection_info = cmd_args.get_pool_selection_info(args)
     selected_pool_config = pool_selector.select_pool(pool_selection_info)
     if selected_pool_config is None:
         raise LookupError('No pool configuration in "' + pool_config_file + '" found')
@@ -31,18 +30,18 @@ def _create_command(args):
     if pool_connection_info is None:
         raise LookupError('No pool configuration in "' + pool_config_file + '" found')
 
-    cmd_file_name = get_executive_file(args)
+    cmd_file_name = cmd_args.get_executive_file(args)
     if cmd_file_name is None:
         cmd_file_name = './cpuminer-multi/cpuminer'
 
-    args = get_cpuminer_multi_args(args) \
-           + get_pool_args(pool_selection_info, pool_connection_info, pool_user_config)
+    args = cmd_args.get_cpuminer_multi_args(args) \
+           + cmd_args.get_pool_args(pool_selection_info, pool_connection_info, pool_user_config)
     return Command(cmd_file_name, args)
 
 
 cmd_args = parse_command_line_arguments()
 
-log_file = get_log_file(cmd_args)
+log_file = cmd_args.get_log_file(cmd_args)
 cmd_output_consumer = ConsoleCommandOutputConsumer() \
     if log_file is None else FileCommandOutputConsumer(log_file)
 
