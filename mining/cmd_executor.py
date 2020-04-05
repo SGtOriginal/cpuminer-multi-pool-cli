@@ -1,9 +1,8 @@
 import subprocess
+from datetime import date
 from typing import overload
 
 from mining.cmd import Command
-
-from datetime import date
 
 
 class CommandOutputConsumer:
