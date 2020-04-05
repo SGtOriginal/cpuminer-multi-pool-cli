@@ -1,7 +1,7 @@
 import subprocess
 from typing import overload
 
-from cmd.cmd import Command
+from mining.cmd import Command
 
 from datetime import date
 

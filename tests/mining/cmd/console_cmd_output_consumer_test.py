@@ -1,6 +1,6 @@
 import unittest
 
-from cmd.cmd_executor import ConsoleCommandOutputConsumer
+from mining.cmd import ConsoleCommandOutputConsumer
 from tests.test_console import captured_output
 
 

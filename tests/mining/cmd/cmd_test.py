@@ -1,6 +1,6 @@
 import unittest
 
-from cmd.cmd import Command
+from mining.cmd import Command
 
 
 class CommandTestCase(unittest.TestCase):

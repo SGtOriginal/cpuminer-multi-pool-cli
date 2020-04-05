@@ -1,5 +1,5 @@
-from cmd.cmd import Command
-from cmd.cmd_executor import CommandExecutor, ConsoleCommandOutputConsumer, FileCommandOutputConsumer
+from mining.cmd.cmd import Command
+from mining.cmd.cmd_executor import CommandExecutor, ConsoleCommandOutputConsumer, FileCommandOutputConsumer
 from mining.app.cmd_args import parse_command_line_arguments
 from mining.pool.config.general.pool_config_resolver import JsonFilePoolConfigurationResolver
 from mining.pool.config.selection.pool_selector import PoolSelector
