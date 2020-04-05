@@ -1,13 +1,15 @@
 class Command:
 
     def __init__(self, name: str, args: [str]):
-        self.name = name
-        self.args = args
+        splitted_name = name.split()
+        self.name = splitted_name[0]
+        self.args = splitted_name[1:] + args
+
+    def __str__(self) -> str:
+        return 'Command{' \
+               + 'name=' + self.name \
+               + ', args=' + self.args \
+               + '}'
 
     def as_list(self):
-        return [name] + args
-
-class CommandCreator:
-
-    def create(self) -> Command:
-        pass
+        return [self.name] + self.args

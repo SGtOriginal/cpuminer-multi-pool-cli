@@ -1,0 +1,198 @@
+[
+  {
+    "name": "DigiHash",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "qubit",
+            "connections": [
+              {
+                "difficulty": 0.01,
+                "baseurl": "digihash.co",
+                "port": 3012
+              },
+              {
+                "difficulty": 0.4,
+                "baseurl": "digihash.co",
+                "port": 3036
+              },
+              {
+                "difficulty": 1,
+                "baseurl": "digihash.co",
+                "port": 3260
+              }
+            ]
+          },
+          {
+            "name": "scrypt",
+            "connections": [
+              {
+                "difficulty": 8192,
+                "baseurl": "digihash.co",
+                "port": 3009
+              },
+              {
+                "difficulty": 32768,
+                "baseurl": "digihash.co",
+                "port": 3033
+              },
+              {
+                "difficulty": 131072,
+                "baseurl": "digihash.co",
+                "port": 3257
+              }
+            ]
+          },
+          {
+            "name": "sha256",
+            "connections": [
+              {
+                "difficulty": 8192,
+                "baseurl": "digihash.co",
+                "port": 3008
+              },
+              {
+                "difficulty": 16384,
+                "baseurl": "digihash.co",
+                "port": 3032
+              },
+              {
+                "difficulty": 32768,
+                "baseurl": "digihash.co",
+                "port": 3256
+              }
+            ]
+          },
+          {
+            "name": "skein",
+            "connections": [
+              {
+                "difficulty": 0.1,
+                "baseurl": "digihash.co",
+                "port": 3011
+              },
+              {
+                "difficulty": 10,
+                "baseurl": "digihash.co",
+                "port": 3035
+              },
+              {
+                "difficulty": 256,
+                "baseurl": "digihash.co",
+                "port": 3259
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AHashPool",
+    "currencies": [
+      {
+        "currency": {
+          "name": "Bitcoin",
+          "symbol": "BTC"
+        },
+        "algorithms": [
+          {
+            "name": "sha256d",
+            "connections": [
+              {
+                "baseurl": "sha256.mine.ahashpool.com",
+                "port": 3333
+              }
+            ]
+          },
+          {
+            "name": "scrypt",
+            "connections": [
+              {
+                "baseurl": "scrypt.mine.ahashpool.com",
+                "port": 3433
+              }
+            ]
+          },
+          {
+            "name": "skein",
+            "connections": [
+              {
+                "baseurl": "skein.mine.ahashpool.com",
+                "port": 4933
+              }
+            ]
+          },
+          {
+            "name": "qubit",
+            "connections": [
+              {
+                "baseurl": "qubit.mine.ahashpool.com",
+                "port": 4733
+              }
+            ]
+          },
+          {
+            "name": "lbry",
+            "connections": [
+              {
+                "baseurl": "lbry.mine.ahashpool.com",
+                "port": 3334
+              }
+            ]
+          },
+          {
+            "name": "neoscrypt",
+            "connections": [
+              {
+                "baseurl": "neoscrypt.mine.ahashpool.com",
+                "port": 4233
+              }
+            ]
+          },
+          {
+            "name": "nist5",
+            "connections": [
+              {
+                "baseurl": "nist5.mine.ahashpool.com",
+                "port": 3833
+              }
+            ]
+          },
+          {
+            "name": "tribus",
+            "connections": [
+              {
+                "baseurl": "tribus.mine.ahashpool.com",
+                "port": 8533
+              }
+            ]
+          },
+          {
+            "name": "x11",
+            "connections": [
+              {
+                "baseurl": "x11.mine.ahashpool.com",
+                "port": 3533
+              }
+            ]
+          },
+          {
+            "name": "x17",
+            "connections": [
+              {
+                "baseurl": "x17.mine.ahashpool.com",
+                "port": 3737
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

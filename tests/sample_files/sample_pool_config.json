@@ -1,0 +1,25 @@
+[
+  {
+    "name": "DigiHash",
+    "baseurl": "digihash.co",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "skein",
+            "ports": [
+              {
+                "difficulty": 10,
+                "port": 3035
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
