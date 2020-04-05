@@ -7,7 +7,7 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='cpuminer-multi-poo-cli',
+    name='cpuminer-multi-pool-cli',
     version='0.1.0',
     description='Command line interface for cpuminer-multi for pool selection',
     long_description=readme,
