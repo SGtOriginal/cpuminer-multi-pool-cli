@@ -2,9 +2,10 @@ from mining.app.cmd_args import parse_command_line_arguments, get_pool_config_fi
     get_pool_selection_info, get_executive_file, get_cpuminer_multi_args, get_pool_args, get_log_file
 from mining.cmd import Command
 from mining.cmd_executor import CommandExecutor, ConsoleCommandOutputConsumer, FileCommandOutputConsumer
-from mining.pool.config.general.pool_config_resolver import JsonFilePoolConfigurationResolver
-from mining.pool.config.selection.pool_selector import PoolSelector
-from mining.pool.config.user.pool_user_config_resolver import CsvFilePoolUserConfigurationResolver
+from mining.pool.config.pool_connection_info_resolver import resolve_connection_info
+from mining.pool.config.pool_config_resolver import JsonFilePoolConfigurationResolver
+from mining.pool.config.pool_selector import PoolSelector
+from mining.pool.config.pool_user_config_resolver import CsvFilePoolUserConfigurationResolver
 
 
 def _create_command(args):
@@ -24,7 +25,8 @@ def _create_command(args):
     if selected_pool_config is None:
         raise LookupError('No pool configuration in "' + pool_config_file + '" found')
     pool_config, pool_user_config = selected_pool_config
-    pool_connection_info = pool_config.connection_info(
+    pool_connection_info = resolve_connection_info(
+        pool_config,
         pool_selection_info.currency_name_or_symbol,
         pool_selection_info.hash_algorithm,
         pool_selection_info.difficulty)

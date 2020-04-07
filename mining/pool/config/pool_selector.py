@@ -1,8 +1,8 @@
-from mining.pool.config.general.pool_config import PoolConfiguration
-from mining.pool.config.general.pool_config_resolver import PoolConfigurationResolver
-from mining.pool.config.selection.pool_selection_info import PoolSelectionInfo
-from mining.pool.config.user.pool_user_config import PoolUserConfiguration
-from mining.pool.config.user.pool_user_config_resolver import PoolUserConfigurationResolver
+from mining.pool.config.pool_config import PoolConfiguration
+from mining.pool.config.pool_config_resolver import PoolConfigurationResolver
+from mining.pool.config.pool_selection_info import PoolSelectionInfo
+from mining.pool.config.pool_user_config import PoolUserConfiguration
+from mining.pool.config.pool_user_config_resolver import PoolUserConfigurationResolver
 
 
 class PoolSelector:

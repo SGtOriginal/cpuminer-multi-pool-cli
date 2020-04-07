@@ -1,5 +1,4 @@
 from mining.currency import Currency
-from mining.pool.config.general.pool_connection_info import PoolConnectionInfo
 
 
 class PoolConnectionConfiguration:
@@ -11,6 +10,12 @@ class PoolConnectionConfiguration:
         self.difficulty = difficulty
         self.base_url = base_url
         self.port = port
+
+    def __eq__(self, other):
+        if not isinstance(other, PoolConnectionConfiguration):
+            return False
+
+        return self.difficulty == other.difficulty
 
     def __str__(self) -> str:
         return 'PoolPortConfiguration{' \
@@ -28,6 +33,12 @@ class PoolHashAlgorithmConfiguration:
         self.algorithm_name = algorithm_name
         self.connection_configs = connection_configs
 
+    def __eq__(self, other):
+        if not isinstance(other, PoolHashAlgorithmConfiguration):
+            return False
+
+        return self.algorithm_name == other.algorithm_name
+
     def __str__(self) -> str:
         return 'PoolHashAlgorithmConfiguration{' \
                + 'algorithm_name=' + str(self.algorithm_name) \
@@ -41,6 +52,12 @@ class PoolCurrencyConfiguration:
                  hash_algorithm_configs: [PoolHashAlgorithmConfiguration] = []):
         self.currency = currency
         self.hash_algorithm_configs = hash_algorithm_configs
+
+    def __eq__(self, other):
+        if not isinstance(other, PoolCurrencyConfiguration):
+            return False
+
+        return self.currency == other.currency
 
     def __str__(self) -> str:
         return 'PoolCurrencyConfiguration{' \
@@ -56,30 +73,13 @@ class PoolConfiguration:
         self.pool_name = pool_name
         self.currency_configs = currency_configs
 
+    def __eq__(self, other):
+        if not isinstance(other, PoolConfiguration):
+            return False
+
+        return self.pool_name == other.pool_name
+
     def __str__(self) -> str:
         return 'PoolConfiguration{' \
                + 'pool_name=' + self.pool_name \
                + '}'
-
-    def connection_info(self,
-                        currency_name_or_symbol: str,
-                        hash_algorithm: str,
-                        difficulty: int = None) -> PoolConnectionInfo:
-        connection_candidate = self._filter_first_connection_candidates(currency_name_or_symbol,
-                                                                        hash_algorithm,
-                                                                        difficulty)
-        return PoolConnectionInfo(self.pool_name, connection_candidate.base_url, connection_candidate.port) \
-            if connection_candidate is not None else None
-
-    def _filter_first_connection_candidates(self,
-                                            currency_name_or_symbol: str,
-                                            hash_algorithm: str,
-                                            difficulty: int = None) -> PoolConnectionConfiguration:
-        for currency_config in self.currency_configs:
-            if currency_config.currency.matches(currency_name_or_symbol):
-                for hash_algorithm_config in currency_config.hash_algorithm_configs:
-                    if hash_algorithm_config.algorithm_name.lower() == hash_algorithm.lower():
-                        for connection_config in hash_algorithm_config.connection_configs:
-                            if difficulty is None or connection_config.difficulty == difficulty:
-                                return connection_config
-        return None

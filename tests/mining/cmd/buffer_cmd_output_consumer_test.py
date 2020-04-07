@@ -1,6 +1,6 @@
 import unittest
 
-from mining.cmd import BufferCommandOutputConsumer
+from mining.cmd_executor import BufferCommandOutputConsumer
 
 
 class BufferCommandOutputConsumerTestCase(unittest.TestCase):

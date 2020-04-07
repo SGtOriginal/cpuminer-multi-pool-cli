@@ -1,6 +1,6 @@
 import unittest
 
-from mining.pool.config.user.pool_user_config_parser import parse_pool_user_configurations
+from mining.pool.config.pool_user_config_parser import parse_pool_user_configurations
 
 
 class PoolUserConfigurationParserTestCase(unittest.TestCase):

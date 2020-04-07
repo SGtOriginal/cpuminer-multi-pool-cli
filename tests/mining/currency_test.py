@@ -7,23 +7,23 @@ class CurrencyTestCase(unittest.TestCase):
 
     def test_matches_name_same_case(self):
         currency = Currency('Bitcoin', 'BTC')
-        self.assertEqual(True, currency.matches('Bitcoin'))
+        self.assertTrue(currency.matches('Bitcoin'))
 
     def test_matches_name_not_same_case(self):
         currency = Currency('Bitcoin', 'BTC')
-        self.assertEqual(True, currency.matches('bitcoin'))
+        self.assertTrue(currency.matches('bitcoin'))
 
     def test_matches_symbol_same_case(self):
         currency = Currency('Bitcoin', 'BTC')
-        self.assertEqual(True, currency.matches('BTC'))
+        self.assertTrue(currency.matches('BTC'))
 
     def test_matches_symbol_not_same_case(self):
         currency = Currency('Bitcoin', 'BTC')
-        self.assertEqual(True, currency.matches('btc'))
+        self.assertTrue(currency.matches('btc'))
 
-    def test_not_matches_name_same_case(self):
+    def test_not_matches_name_or_symbol(self):
         currency = Currency('Bitcoin', 'BTC')
-        self.assertEqual(False, currency.matches('Coin'))
+        self.assertFalse(currency.matches('Coin'))
 
 
 if __name__ == '__main__':

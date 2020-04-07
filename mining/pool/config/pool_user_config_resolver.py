@@ -1,8 +1,8 @@
 from csv import DictReader
 from typing import overload
 
-from mining.pool.config.user.pool_user_config import PoolUserConfiguration
-from mining.pool.config.user.pool_user_config_parser import parse_pool_user_configurations
+from mining.pool.config.pool_user_config import PoolUserConfiguration
+from mining.pool.config.pool_user_config_parser import parse_pool_user_configurations
 
 
 class PoolUserConfigurationResolver:
@@ -14,7 +14,7 @@ class PoolUserConfigurationResolver:
 
 class BufferPoolUserConfigurationResolver(PoolUserConfigurationResolver):
 
-    def __init__(self, pool_user_configurations: PoolUserConfiguration):
+    def __init__(self, pool_user_configurations: [PoolUserConfiguration]):
         self.pool_user_configurations = pool_user_configurations
 
     def resolve_all(self) -> [PoolUserConfiguration]:

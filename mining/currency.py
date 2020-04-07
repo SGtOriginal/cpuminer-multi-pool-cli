@@ -4,6 +4,12 @@ class Currency:
         self.name = name
         self.symbol = symbol
 
+    def __eq__(self, other):
+        if not isinstance(other, Currency):
+            return False
+
+        return self.name == other.name
+
     def __str__(self) -> str:
         return 'Currency{' \
                + 'name=' + str(self.name) \

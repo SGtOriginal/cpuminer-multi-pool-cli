@@ -1,7 +1,7 @@
 from typing import overload
 
-from mining.pool.config.general.pool_config import PoolConfiguration
-from mining.pool.config.general.pool_config_parser import parse_pool_configurations
+from mining.pool.config.pool_config import PoolConfiguration
+from mining.pool.config.pool_config_parser import parse_pool_configurations
 
 
 class PoolConfigurationResolver:

@@ -1,13 +1,13 @@
-from mining.pool.config.general.pool_config import PoolConfiguration
-from mining.pool.config.user.pool_user_config import PoolUserConfiguration
+from mining.pool.config.pool_config import PoolConfiguration
+from mining.pool.config.pool_user_config import PoolUserConfiguration
 
 
 class PoolSelectionInfo:
 
     def __init__(self,
                  pool_name: str,
-                 currency_name_or_symbol: str,
-                 hash_algorithm: str,
+                 currency_name_or_symbol: str = None,
+                 hash_algorithm: str = None,
                  difficulty: int = None):
         self.pool_name = pool_name
         self.currency_name_or_symbol = currency_name_or_symbol

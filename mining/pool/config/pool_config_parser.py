@@ -1,11 +1,13 @@
 from mining.currency import Currency
 from mining.json_parser import json2obj
-from mining.pool.config.general.pool_config import PoolConfiguration, PoolCurrencyConfiguration, \
+from mining.pool.config.pool_config import PoolConfiguration, PoolCurrencyConfiguration, \
     PoolHashAlgorithmConfiguration, PoolConnectionConfiguration
 
 
 def parse_pool_configurations(json_input: str) -> [PoolConfiguration]:
     parsed_pool_configs = json2obj(json_input)
+    if parsed_pool_configs is None:
+        return []
     pool_configs = []
     for parsed_pool_config in parsed_pool_configs:
         pool_config = _parse_pool_configuration(parsed_pool_config)

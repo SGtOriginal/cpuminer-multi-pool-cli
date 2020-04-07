@@ -1,25 +1,65 @@
 [
   {
-    "name": "DigiHash",
-    "baseurl": "digihash.co",
+    "name": "pool1",
     "currencies": [
       {
         "currency": {
-          "name": "DigiByte",
-          "symbol": "DGB"
+          "name": "currency1",
+          "symbol": "c1"
         },
         "algorithms": [
           {
-            "name": "skein",
-            "ports": [
+            "name": "algo1",
+            "connections": [
               {
-                "difficulty": 10,
-                "port": 3035
+                "difficulty": 1,
+                "baseurl": "pool.1",
+                "port": 4201
+              },
+              {
+                "difficulty": 2,
+                "baseurl": "pool.2",
+                "port": 4202
+              },
+              {
+                "difficulty": 3,
+                "baseurl": "pool.3",
+                "port": 4203
               }
             ]
+          },
+          {
+            "name": "algo2",
+            "connections": []
+          },
+          {
+            "name": "algo3",
+            "connections": []
           }
         ]
+      },
+      {
+        "currency": {
+          "name": "currency2",
+          "symbol": "c2"
+        },
+        "algorithms": []
+      },
+      {
+        "currency": {
+          "name": "currency3",
+          "symbol": "c3"
+        },
+        "algorithms": []
       }
     ]
+  },
+  {
+    "name": "pool2",
+    "currencies": []
+  },
+  {
+    "name": "pool3",
+    "currencies": []
   }
 ]

@@ -2,9 +2,9 @@ import argparse
 
 from mining.cpuminer_multi.cmd_params import param_quiet, param_threads, param_algo, param_url, param_pass, param_user, \
     param_max_temp
-from mining.pool.config.general.pool_connection_info import PoolConnectionInfo
-from mining.pool.config.selection.pool_selection_info import PoolSelectionInfo
-from mining.pool.config.user.pool_user_config import PoolUserConfiguration
+from mining.pool.config.pool_connection_info import PoolConnectionInfo
+from mining.pool.config.pool_selection_info import PoolSelectionInfo
+from mining.pool.config.pool_user_config import PoolUserConfiguration
 
 
 def parse_command_line_arguments():

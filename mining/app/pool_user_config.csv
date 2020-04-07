@@ -1,4 +1,4 @@
 pool_name,username,password
 DigiHash,dgb1qpv2h8sue0xt04lsmqhzejlemqeug0zkl7ufyql,anything
-AHashPool,bc1qnt4xyjfwgdaqr6ps5c4reywt3gxulnhwwedglu,"c=BTC,ID=rig1"
-RavenMiner,RQyfUi4gayh9QVb5Zp7NefqYiz2yoqtAtL,x
+RavenMiner,RQyfUi4gayh9QVb5Zp7NefqYiz2yoqtAtL.miningpi,x
+AHashPool,bc1qnt4xyjfwgdaqr6ps5c4reywt3gxulnhwwedglu,"c=BTC,ID=miningpi"

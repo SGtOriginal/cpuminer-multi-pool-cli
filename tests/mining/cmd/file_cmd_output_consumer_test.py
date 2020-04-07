@@ -2,7 +2,7 @@ import os
 import unittest
 from datetime import date
 
-from mining.cmd import FileCommandOutputConsumer
+from mining.cmd_executor import FileCommandOutputConsumer
 
 
 class FileCommandOutputConsumerTestCase(unittest.TestCase):

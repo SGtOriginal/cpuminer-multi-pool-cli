@@ -1,7 +1,7 @@
 import unittest
 
 from mining.cmd import Command
-from mining.cmd import CommandExecutor, BufferCommandOutputConsumer
+from mining.cmd_executor import BufferCommandOutputConsumer, CommandExecutor
 
 
 class CommandExecutorTestCase(unittest.TestCase):
