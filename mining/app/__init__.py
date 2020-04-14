@@ -4,6 +4,7 @@
 # Excecute Shell script: https://stackabuse.com/executing-shell-commands-with-python/
 # JSON: https://docs.python.org/3/library/json.html
 # JSON to object: https://stackoverflow.com/questions/6578986/how-to-convert-json-data-into-a-python-object
+# PyInstaller: https://realpython.com/pyinstaller-python/
 
 # -p digihash -c dgb -a skein -q -f "docker run cpuminer-multi:alpine cpuminer"
 
@@ -11,6 +12,8 @@
 # Balance: https://ahashpool.com/wallet.php?wallet=bc1qnt4xyjfwgdaqr6ps5c4reywt3gxulnhwwedglu
 
 # -p ravenminer -c RVN -a x16rv2 -q -f "docker run cpuminer-multi:alpine cpuminer"
+# -p ravenminer -d 1 -t 4 -f "docker run cpuminer-multi:alpine cpuminer"
+# --pool-config-file ../../files/pool_config.json --pool-user-config-file ../../files/pool_user_config.csv
 # Balance: https://www.ravenminer.com/?address=RQyfUi4gayh9QVb5Zp7NefqYiz2yoqtAtL
 
 # ** cpuminer-multi 1.3.7 by tpruvot@github **

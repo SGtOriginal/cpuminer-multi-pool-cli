@@ -63,23 +63,23 @@ class PoolConnectionInfoResolverTestCase(unittest.TestCase):
         pool_connection_info = resolve_connection_info(self.pool_config, 'c2', None, None)
 
         self.assertEqual('pool1', pool_connection_info.pool_name)
-        self.assertEqual('base_url_1', pool_connection_info.base_url)
-        self.assertEqual(4201, pool_connection_info.port)
+        self.assertEqual('base_url_3', pool_connection_info.base_url)
+        self.assertEqual(4203, pool_connection_info.port)
 
     def test_resolve_pool_connection_info_from_pool_config_c_none_a_not_none_d_none(self):
         pool_connection_info = resolve_connection_info(self.pool_config, None, 'algo2', None)
 
         self.assertEqual('pool1', pool_connection_info.pool_name)
-        self.assertEqual('base_url_1', pool_connection_info.base_url)
-        self.assertEqual(4201, pool_connection_info.port)
+        self.assertEqual('base_url_3', pool_connection_info.base_url)
+        self.assertEqual(4203, pool_connection_info.port)
 
     def test_resolve_pool_connection_info_from_pool_config_c_none_a_none_d_none(self):
         # for each: any first if not empty
         pool_connection_info = resolve_connection_info(self.pool_config, None, None, None)
 
         self.assertEqual('pool1', pool_connection_info.pool_name)
-        self.assertEqual('base_url_1', pool_connection_info.base_url)
-        self.assertEqual(4201, pool_connection_info.port)
+        self.assertEqual('base_url_3', pool_connection_info.base_url)
+        self.assertEqual(4203, pool_connection_info.port)
 
 
 if __name__ == '__main__':

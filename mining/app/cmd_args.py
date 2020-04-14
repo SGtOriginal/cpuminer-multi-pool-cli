@@ -65,11 +65,10 @@ def get_pool_selection_info(args):
 
 
 def get_pool_args(
-        pool_selection_info: PoolSelectionInfo,
         pool_connection_info: PoolConnectionInfo,
         pool_user_configuration: PoolUserConfiguration) -> [str]:
     return [
-        param_algo(pool_selection_info.hash_algorithm.lower()),
+        param_algo(pool_connection_info.hash_algorithm_name),
         param_url(pool_connection_info.base_url, pool_connection_info.port),
         param_user(pool_user_configuration.username),
         param_pass(pool_user_configuration.password),

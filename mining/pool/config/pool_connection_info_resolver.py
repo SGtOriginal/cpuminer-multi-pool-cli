@@ -7,58 +7,56 @@ def resolve_connection_info(
         currency_name_or_symbol: str = None,
         hash_algorithm: str = None,
         difficulty: int = None) -> PoolConnectionInfo:
-    connection_candidate = _filter_first_exactly_matching_connection_candidate(
+    hash_algorithm_name, connection_candidate = _filter_first_matching_connection_candidate(
         pool_config,
         currency_name_or_symbol,
         hash_algorithm,
         difficulty)
     if connection_candidate is None:
         pass  # TODO non_exatly_matching_where_necessary_and_possible
-    return PoolConnectionInfo(pool_config.pool_name, connection_candidate.base_url, connection_candidate.port) \
-        if connection_candidate is not None else None
+    return PoolConnectionInfo(
+        pool_config.pool_name,
+        hash_algorithm_name,
+        connection_candidate.base_url,
+        connection_candidate.port
+    ) if connection_candidate is not None else None
 
 
-def _filter_first_exactly_matching_connection_candidate(
+def _filter_first_matching_connection_candidate(
         pool_config: PoolConfiguration,
         currency_name_or_symbol: str = None,
         hash_algorithm: str = None,
         difficulty: int = None) -> PoolConnectionConfiguration:
-    currency_config = _filter_list(
+    currency_config_candidates = _find_candidates(
         currency_name_or_symbol,
         pool_config.currency_configs,
-        lambda c, s: c.currency.matches(s))
-    if currency_config is not None:
-        hash_algorithm_config = _filter_list(
+        lambda c, s: s is not None and c.currency.matches(s),
+        False)
+    for currency_config_candidate in currency_config_candidates:
+        if len(currency_config_candidate.hash_algorithm_configs) == 0:
+            continue
+        hash_algorithm_config_candidates = _find_candidates(
             hash_algorithm,
-            currency_config.hash_algorithm_configs,
-            lambda c, s: c.algorithm_name.lower() == s)
-        if hash_algorithm_config is not None:
-            connection_config = _filter_list(
+            currency_config_candidate.hash_algorithm_configs,
+            lambda c, s: c.algorithm_name.lower() == s,
+            False)
+        for hash_algorithm_config_candidate in hash_algorithm_config_candidates:
+            if len(hash_algorithm_config_candidate.connection_configs) == 0:
+                continue
+            connection_config_candidates = _find_candidates(
                 difficulty,
-                hash_algorithm_config.connection_configs,
-                lambda c, s: c.difficulty == s)
-            if connection_config is not None:
-                return connection_config
-
-    # if currency_name_or_symbol is not None:
-    #     for currency_config in pool_config.currency_configs:
-    #         if hash_algorithm is not None \
-    #                 and currency_config.currency.matches(currency_name_or_symbol):
-    #             for hash_algorithm_config in currency_config.hash_algorithm_configs:
-    #                 if hash_algorithm_config.algorithm_name.lower() == hash_algorithm.lower():
-    #                     for connection_config in hash_algorithm_config.connection_configs:
-    #                         if connection_config.difficulty == difficulty:
-    #                             return connection_config
+                hash_algorithm_config_candidate.connection_configs,
+                lambda c, s: c.difficulty == s,
+                True)
+            return hash_algorithm_config_candidate.algorithm_name, connection_config_candidates[0]
     return None
 
 
-def _filter_list(search_key, list, matches):
+def _find_candidates(search_key, list_, matches, allow_none):
+    if not allow_none and search_key is None:
+        return list_  # iterate over items until there is matching
     # try find exact match (also None as value possible)
-    if search_key is not None:
-        for item in list:
-            if matches(item, search_key):
-                return item
-    elif len(list) > 0:
-        return list[0]  # iterate over items until there is matching
-    else:
-        return None
+    for item in list_:
+        if matches(item, search_key):
+            return [item]
+    return []  # no exact match found

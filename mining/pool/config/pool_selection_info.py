@@ -11,7 +11,7 @@ class PoolSelectionInfo:
                  difficulty: int = None):
         self.pool_name = pool_name
         self.currency_name_or_symbol = currency_name_or_symbol
-        self.hash_algorithm = hash_algorithm
+        self.hash_algorithm = hash_algorithm.lower() if hash_algorithm is not None else None
         self.difficulty = difficulty
 
     def matches_pool_configuration(self, pool_config: PoolConfiguration) -> bool:

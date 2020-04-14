@@ -37,18 +37,23 @@ def _create_command(args):
     if cmd_file_name is None:
         cmd_file_name = './cpuminer-multi/cpuminer'
 
-    args = get_cpuminer_multi_args(args) \
-           + get_pool_args(pool_selection_info, pool_connection_info, pool_user_config)
+    args = get_cpuminer_multi_args(args) + get_pool_args(pool_connection_info, pool_user_config)
     return Command(cmd_file_name, args)
 
 
-cmd_args = parse_command_line_arguments()
+def main():
+    cmd_args = parse_command_line_arguments()
 
-log_file = get_log_file(cmd_args)
-cmd_output_consumer = ConsoleCommandOutputConsumer() \
-    if log_file is None else FileCommandOutputConsumer(log_file)
+    log_file = get_log_file(cmd_args)
+    cmd_output_consumer = ConsoleCommandOutputConsumer() \
+        if log_file is None else FileCommandOutputConsumer(log_file)
 
-cmd_executor = CommandExecutor(cmd_output_consumer)
+    cmd_executor = CommandExecutor(cmd_output_consumer)
 
-cmd = _create_command(cmd_args)
-cmd_executor.execute(cmd)
+    cmd = _create_command(cmd_args)
+    cmd_executor.execute(cmd)
+
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()

@@ -26,8 +26,11 @@ class CommandExecutor:
             universal_newlines=True)
 
         while True:
-            output_line = process.stdout.readline()
-            self._write_output_line(output_line.strip())
+            try:
+                output_line = process.stdout.readline()
+                self._write_output_line(output_line.strip())
+            except KeyboardInterrupt:
+                print('exit by KeyboardInterrupt')
             return_code = process.poll()
             if return_code is not None:
                 print('RETURN CODE', return_code)

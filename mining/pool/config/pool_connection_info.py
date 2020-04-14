@@ -2,9 +2,11 @@ class PoolConnectionInfo:
 
     def __init__(self,
                  pool_name: str,
+                 hash_algorithm_name: str,
                  base_url: str,
                  port: int):
         self.pool_name = pool_name
+        self.hash_algorithm_name = hash_algorithm_name
         self.base_url = base_url
         self.port = port
 
@@ -17,6 +19,7 @@ class PoolConnectionInfo:
     def __str__(self) -> str:
         return 'PoolConnectionInfo{' \
                + 'pool_name=' + self.pool_name \
+               + ', hash_algorithm_name=' + self.hash_algorithm_name \
                + ', base_url=' + self.base_url \
                + ', port=' + self.port \
                + '}'
