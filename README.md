@@ -6,14 +6,24 @@ This project is a command line interface for https://github.com/tpruvot/cpuminer
 It offers following features:
 * Load mining pool configuration saved in files
 * Run cpuminer-multi with this configuration
-
-## Install with PyInstaller
+ls dist 
+## Install with PyInstaller (Debian Linux)
 
 https://www.pyinstaller.org/
+
+Prerequirements:
+```shell script
+apt-get install python3-dev
+```
 
 Install PyInstaller:
 ```shell script
 pip install pyinstaller
+```
+
+If you don't find _pyinstaller_:
+```
+find / -name "pyinstaller"
 ```
 
 Build native code into directory __dist/__:
