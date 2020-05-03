@@ -160,6 +160,54 @@
     ]
   },
   {
+    "name": "MultiPool",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "scrypt",
+            "connections": [
+              {
+                "baseurl": "eu.multipool.us",
+                "port": 3351
+              }
+            ]
+          },
+          {
+            "name": "sha256d",
+            "connections": [
+              {
+                "baseurl": "eu.multipool.us",
+                "port": 3360
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "currency": {
+          "name": "Dash",
+          "symbol": "DASH"
+        },
+        "algorithms": [
+          {
+            "name": "x11",
+            "connections": [
+              {
+                "baseurl": "eu.multipool.us",
+                "port": 3371
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "AHashPool",
     "currencies": [
       {
