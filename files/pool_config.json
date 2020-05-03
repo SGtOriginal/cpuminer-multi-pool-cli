@@ -208,6 +208,46 @@
     ]
   },
   {
+    "name": "CoinFoundry",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "scrypt",
+            "connections": [
+              {
+                "baseurl": "dgb2.coinfoundry.org",
+                "port": 3178
+              }
+            ]
+          },
+          {
+            "name": "sha256d",
+            "connections": [
+              {
+                "baseurl": "dgb1.coinfoundry.org",
+                "port": 3174
+              }
+            ]
+          },
+          {
+            "name": "skein",
+            "connections": [
+              {
+                "baseurl": "dgb3.coinfoundry.org",
+                "port": 3255
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "AHashPool",
     "currencies": [
       {
