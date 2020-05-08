@@ -4,3 +4,5 @@ RavenMiner,RQyfUi4gayh9QVb5Zp7NefqYiz2yoqtAtL.miningpi,x
 MultiPool,miningpi,x
 CoinFoundry,dgb1qpv2h8sue0xt04lsmqhzejlemqeug0zkl7ufyql.miningpi,"d=1"
 AHashPool,bc1qnt4xyjfwgdaqr6ps5c4reywt3gxulnhwwedglu,"c=BTC,ID=miningpi"
+ZPoolSkein,dgb1qpv2h8sue0xt04lsmqhzejlemqeug0zkl7ufyql,"c=DGB,zap=DGB-Skein"
+ZPoolScrypt,dgb1qpv2h8sue0xt04lsmqhzejlemqeug0zkl7ufyql,"c=DGB,zap=DGB-Scrypt"

@@ -8,7 +8,7 @@ class PoolSelectionInfo:
                  pool_name: str,
                  currency_name_or_symbol: str = None,
                  hash_algorithm: str = None,
-                 difficulty: int = None):
+                 difficulty: float = None):
         self.pool_name = pool_name
         self.currency_name_or_symbol = currency_name_or_symbol
         self.hash_algorithm = hash_algorithm.lower() if hash_algorithm is not None else None

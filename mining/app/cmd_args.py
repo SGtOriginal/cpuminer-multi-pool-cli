@@ -21,7 +21,7 @@ def parse_command_line_arguments():
                              + ' e.g. Bitcoin or BTC for Bitcoin')
     parser.add_argument('-a', '--algorithm',
                         help='hash algorithm for crypto currency e.g. sha256d, scrypt')
-    parser.add_argument('-d', '--difficulty', type=int, help='difficulty for hash algorithm (optional)')
+    parser.add_argument('-d', '--difficulty', type=float, help='difficulty for hash algorithm (optional)')
     parser.add_argument('--pool-config-file',
                         help='file path of JSON mining pool configuration; default: "pool_config.json"')
     parser.add_argument('--pool-user-config-file',

@@ -102,56 +102,56 @@
         },
         "algorithms": [
           {
-            "name": "x16rv2",
+            "name": "kawpow",
             "connections": [
+              {
+                "difficulty": 0.001,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3800
+              },
+              {
+                "difficulty": 0.01,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3801
+              },
+              {
+                "difficulty": 0.1,
+                "baseurl": "stratum.ravenminer.com",
+                "port": 3802
+              },
               {
                 "difficulty": 1,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3700
+                "port": 3803
               },
               {
                 "difficulty": 2,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3701
+                "port": 3804
               },
               {
                 "difficulty": 4,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3702
+                "port": 3805
               },
               {
                 "difficulty": 8,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3703
+                "port": 3806
               },
               {
                 "difficulty": 16,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3704
+                "port": 3807
               },
               {
                 "difficulty": 32,
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3705
-              },
-              {
-                "difficulty": 64,
-                "baseurl": "stratum.ravenminer.com",
-                "port": 3706
-              },
-              {
-                "difficulty": 128,
-                "baseurl": "stratum.ravenminer.com",
-                "port": 3707
-              },
-              {
-                "difficulty": 256,
-                "baseurl": "stratum.ravenminer.com",
-                "port": 3708
+                "port": 3808
               },
               {
                 "baseurl": "stratum.ravenminer.com",
-                "port": 3737
+                "port": 3838
               }
             ]
           }
@@ -343,6 +343,57 @@
               {
                 "baseurl": "x17.mine.ahashpool.com",
                 "port": 3737
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },{
+    "name": "ZPoolSkein",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "skein",
+            "connections": [
+              {
+                "baseurl": "skein.eu.mine.zpool.ca",
+                "port": 4933
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },{
+    "name": "ZPoolScrypt",
+    "currencies": [
+      {
+        "currency": {
+          "name": "DigiByte",
+          "symbol": "DGB"
+        },
+        "algorithms": [
+          {
+            "name": "scrypt",
+            "connections": [
+              {
+                "baseurl": "scrypt.eu.mine.zpool.ca",
+                "port": 3433
+              }
+            ]
+          },
+          {
+            "name": "qubit",
+            "connections": [
+              {
+                "baseurl": "qubit.eu.mine.zpool.ca",
+                "port": 4733
               }
             ]
           }

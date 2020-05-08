@@ -6,7 +6,7 @@ def resolve_connection_info(
         pool_config: PoolConfiguration,
         currency_name_or_symbol: str = None,
         hash_algorithm: str = None,
-        difficulty: int = None) -> PoolConnectionInfo:
+        difficulty: float = None) -> PoolConnectionInfo:
     hash_algorithm_name, connection_candidate = _filter_first_matching_connection_candidate(
         pool_config,
         currency_name_or_symbol,
@@ -26,7 +26,7 @@ def _filter_first_matching_connection_candidate(
         pool_config: PoolConfiguration,
         currency_name_or_symbol: str = None,
         hash_algorithm: str = None,
-        difficulty: int = None) -> PoolConnectionConfiguration:
+        difficulty: float = None) -> PoolConnectionConfiguration:
     currency_config_candidates = _find_candidates(
         currency_name_or_symbol,
         pool_config.currency_configs,
