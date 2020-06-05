@@ -13,7 +13,7 @@ https://www.pyinstaller.org/
 
 Prerequirements:
 ```shell script
-apt-get install python3-dev
+apt-get install python3 python3-pip python3-dev
 ```
 
 Install PyInstaller:
